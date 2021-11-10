@@ -156,16 +156,16 @@ keras.utils.plot_model(model, to_file = "final_model.png", show_shapes = True, s
 
 
 
+## Results
+
+### Model training
+
 
 ```python
 n_train = 940
 n_test = img_filenames_count - n_train
 cv_frac = 0.2
 ```
-
-## Results
-
-### Model training
 
 
 
