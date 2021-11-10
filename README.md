@@ -1,12 +1,3 @@
-```python
-import os, time
-from datetime import datetime
-file_mtime = datetime.fromtimestamp((os.path.getmtime("README.ipynb"))).strftime("%d/%m/%Y %H:%M:%S")
-comp_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-
-%matplotlib inline
-```
-
 # Breaking Text-Based CAPTCHA with Convolutional Nerual Network (CNN)
 
 
