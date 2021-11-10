@@ -10,21 +10,6 @@ comp_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 # Breaking Text-Based CAPTCHA with Convolutional Nerual Network (CNN)
 
 
-```python
-from IPython.display import Markdown as md
-
-md(
-    "\n".join(
-        [
-            "**Author**: Xiurui Zhu<br />",
-            "**Modified**: {file_mtime}<br />".format(file_mtime = file_mtime),
-            "**Compiled**: {comp_time}".format(comp_time = comp_time)
-        ]
-    )
-)
-```
-
-
 
 
 **Author**: Xiurui Zhu<br />
@@ -46,15 +31,6 @@ img_filenames_count = len(img_filenames)
 import numpy as np
 from matplotlib import pyplot
 data_x = np.array(list(map(lambda x: pyplot.imread(x, format = "PNG"), img_filenames)))
-```
-
-
-```python
-md(
-    "A total of {img_filenames_count} images were loaded. An example image was as follows:".format(
-        img_filenames_count = img_filenames_count
-    )
-)
 ```
 
 
@@ -199,16 +175,6 @@ cv_frac = 0.2
 ## Results
 
 ### Model training
-
-
-```python
-md(
-    "The final CNN model was trained with {n_train} images with {cv_frac_perc} of them as cross-validation dataset.".format(
-        n_train = n_train,
-        cv_frac_perc = str(cv_frac * 100) + "%"
-    )
-)
-```
 
 
 
@@ -696,13 +662,6 @@ plot_model_history(model_history,
 ### Model testing
 
 
-```python
-md(
-    "We tested the final CNN model with the remaining {n_test} images.".format(n_test = n_test)
-)
-```
-
-
 
 
 We tested the final CNN model with the remaining 100 images.
@@ -724,20 +683,6 @@ def matrices2labels(matrices, class_level):
 model_pred = matrices2labels(model.predict(data_x[test_idx]), class_level)
 model_accuracy_lgl = list(map(lambda x, y: x == y, model_pred, np.array(data_y_labels)[test_idx]))
 model_accuracy = np.mean(model_accuracy_lgl)
-```
-
-
-```python
-md(
-    " ".join(
-        [
-            "The final CNN model achieved an overall accuracy of {model_accuracy_perc}.",
-            "Here are some images for testing and their predictions:"
-        ]
-    ).format(
-        model_accuracy_perc = str(model_accuracy * 100) + "%"
-    )
-)
 ```
 
 
